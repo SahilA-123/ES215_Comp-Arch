@@ -2,7 +2,7 @@
 #include <sys/time.h>
 
 using namespace std;
-typedef long long ll;
+typedef long long int ll;
 
 std::ostream&
 operator<<( std::ostream& dest, __int128_t value )
@@ -30,39 +30,42 @@ operator<<( std::ostream& dest, __int128_t value )
     return dest;
 }
 
-long gettime(){
-    struct timeval start;
-    gettimeofday(&start, NULL);
+struct timespec;
 
-    return start.tv_sec*1000000 + start.tv_usec;
-}
+time_t clock1;
+time_t clock2;
 
 __int128 A[1000];
 
 __int128 fibonacci(__int128 n){
-    if (n == 0){
-        return 0;
-    }
-    else if (n == 1){
-        return 1;
+    if (n == 0 || n == 1){
+        return n;
     }
 
     if (A[n] != 0){
         return A[n];
-    } else {
+    } 
+    else {
         A[n] = fibonacci(n-1) + fibonacci(n-2);
         return A[n];
     }
 }
 
 int main(){
-    long start = gettime();
+
+    clock1 = clock();
 
     for (__int128 i = 0; i <= 100; i++){
         cout << fibonacci(i) << " ";
     }
     cout << "\n";
 
-    long end = gettime();
-    cout << end - start;
+    clock2 = clock() - clock1;
+    float CPU_time = (float)clock2 / CLOCKS_PER_SEC;
+    cout << "The time taken by the program is:" << " " << CPU_time<< endl;
+
+    return 0;
+
 }
+
+
