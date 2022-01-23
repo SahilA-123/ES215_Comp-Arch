@@ -1,5 +1,6 @@
 import timeit
 import random as rand
+
 # to make the code simpler(choosing 1,2,3,4,5)
 dictionary = { 1:32, 2:64, 3:128, 4:256, 5:512 }
 print ("Choose an option:\n 1:32,2:64,3:128,4:256,5:512\n")
@@ -28,4 +29,4 @@ for i in range(n):
 stop = timeit.default_timer()
 
 # execution time is the difference end and start time
-print("Time : ", stop-start)
+print("Time of the program: ", stop-start)
