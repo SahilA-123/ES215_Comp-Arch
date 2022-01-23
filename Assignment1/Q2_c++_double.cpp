@@ -21,9 +21,9 @@ int main()
     // long start = gettime();
 
     clock1 = clock();
-    
 
     srand(time(0));
+    
     int n; 
     cin >> n;
     double arr1[n][n], arr2[n][n];
@@ -46,7 +46,7 @@ int main()
         for (int j = 0; j < n; j++){
             res[i][j] = 0;
             for (int k = 0; k < n; k++){
-                res[i][j] += arr1[i][k] * arr2[k][j];
+                res[i][j] = res[i][j] + arr1[i][k] * arr2[k][j];
             }
         }
     }
