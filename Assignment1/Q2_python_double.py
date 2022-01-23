@@ -29,4 +29,4 @@ for i in range(n):
 stop = timeit.default_timer()
 
 # execution time = end - start time 
-print("Time is: ", stop-start)
+print("Time of the program: ", stop-start)
