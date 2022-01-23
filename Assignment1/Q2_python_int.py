@@ -2,8 +2,8 @@ import timeit
 import random as rand
 # to make the code simpler(choosing 1,2,3,4,5)
 dictionary = { 1:32, 2:64, 3:128, 4:256, 5:512 }
-print("Choose an option:\n 1:32,2:64,3:128,4:256,5:512\n")
-choice = int(input())
+print ("Choose an option:\n 1:32,2:64,3:128,4:256,5:512\n")
+choice = int (input()) 
 
 # defining a dictionary
 n = dictionary[choice] 
