@@ -2,7 +2,7 @@
 #include <sys/time.h>
 
 using namespace std;
-typedef long long ll;
+typedef long long int ll;
 
 struct timespec;
 
@@ -21,29 +21,31 @@ int main()
     // long start = gettime();
 
     clock1 = clock();
-    
 
     srand(time(0));
-    int n; cin >> n;
-    int arr1[n][n], arr2[n][n], res[n][n];
+    
+    int n; 
+    cin >> n;
+    int arr1[n][n], arr2[n][n]; 
+    int res[n][n];
 
     for (int i = 0; i < n; i++){
         for (int j = 0; j < n; j++){
-            arr1[i][j] = (rand() % (11));
+            arr1[i][j] = (rand() % (15));
         }
     }
 
     for (int i = 0; i < n; i++){
         for (int j = 0; j < n; j++){
-            arr2[i][j] = (rand() % (11));
+            arr2[i][j] = (rand() % (15));
         }
     }
-
+//     row by column multiplication of rthe matrixes
     for (int i = 0; i < n; i++){
         for (int j = 0; j < n; j++){
             res[i][j] = 0;
             for (int k = 0; k < n; k++){
-                final_array[i][j] += arr1[i][k] * arr2[k][j];
+                res[i][j] += arr1[i][k] * arr2[k][j];
             }
         }
     }
@@ -52,7 +54,7 @@ int main()
         for (int j = 0; j < n; j++){
             cout << res[i][j] << "\t";
         }
-        cout << "\n";
+        cout << endl;
     }
 
     clock2 = clock() - clock1;
