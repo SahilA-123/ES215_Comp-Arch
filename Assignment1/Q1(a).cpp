@@ -48,7 +48,7 @@ __int128 fibonacci(__int128 n){
 int main() {
     long start = gettime();
 
-    for (__int128 i = 0; i <= 40; i++){
+    for (__int128 i = 0; i <= 100; i++){
         cout << fibonacci(i) << " ";
     }
     cout << endl;
